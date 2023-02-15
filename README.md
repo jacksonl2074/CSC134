@@ -3,10 +3,10 @@ CSC 134 Repository
 
 # Purpose
 This is a repo for CSC134 to demonstrate:
--markdown
--source control
--version control
--(optional) Github Pages
+- markdown
+- source control
+- version control
+- (optional) Github Pages
 
 Relevant  assignments for today (2.15.23):
 1. M3Lab2 (uploading)
