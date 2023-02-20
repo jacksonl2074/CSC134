@@ -24,9 +24,12 @@ int main() {
   cout << "Welcome to the craps table!\n";
   
   // for testing, we'll use a repeatable seed
-  cout << "What's your lucky numbers?";
+  cout << "What's your lucky numbers? ";
   cin  >> seed;
+  seed = time(0);
+  // cout << "DEBUG: time(0) = " << seed << endl;
   srand(seed);
+
 
   // start game
   cout << "Let's roll!" << endl;  //TODO: 'press any key'
@@ -34,7 +37,7 @@ int main() {
   die2 = (rand() % 6) + 1; 
   roll = die1 + die2;
   // DEBUG: just use lucky number as roll
-  roll = seed; // take this out!
+ // roll = seed; // take this out!
 
   cout << "You rolled: (" << die1 << " + " << die2 << ") -> ";
   cout << roll << endl;
@@ -43,11 +46,11 @@ int main() {
   switch (roll) {
     // instant losses
     case 2:
-      cout << "Snake eyes!" << endl;
+      cout << "Two - Snake eyes!" << endl;
       winner = false;
       break;
     case 12:
-      cout << "Boxcars!" << endl;
+      cout << "Twelve - Boxcars!" << endl;
       winner = false;
       break;
 
@@ -56,11 +59,16 @@ int main() {
       cout << "You win!" << endl;
       winner = true;
       break;
-    // TODO: add 11
+    case 11:
+      cout << "Eleven!" << endl;
+      break;
     
     // to be continued (point rolls)
     default:
-      cout << "Unknown - TODO" << endl;
+      cout << "Rolled: " << roll << endl;
+      cout << "Continue playing, point is " << roll << endl;
+      cout << "But we'll just call it a draw." << endl;
+      // we should have a sub-routine (function) for this
       break;
   }
   if (winner) {
@@ -68,8 +76,6 @@ int main() {
   } else {
     cout << "Sorry -- you didn't win" << endl;
   }
-
-  
   // end game
   cout << "Thank  you for playing!" << endl;
   return 0;
