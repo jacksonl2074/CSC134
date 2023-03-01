@@ -31,7 +31,16 @@ void option_two() {
     // dice roller
     int d6_1, d6_2, d6_3; // 3 dice (6 sided)
     int total; // 3d6
-    int seed;
+    int seed = time(0);
+    srand(seed);
+    //roll the dice
+    d6_1 = (rand() % 6) + 1; // 0-5, then add one
+    d6_2 = (rand() % 6) + 1;
+    d6_3 = (rand() % 6) + 1;
+    total = d6_1 + d6_2 + d6_3;
+    cout << "Rolling 3d6: ";
+    cout << d6_1 << " + " << d6_2 << " + " << d6_3;
+    cout << " = " << total << endl;
 }
 void option_three() {
     //  sum and average of dice
@@ -46,9 +55,9 @@ int main()
     // do something based on the choice
 
     cout << "Welcome to the menu" << endl;
-    cout << "Press 1 to count" << endl;
-    cout << "Press 2 to sum up numbers" << endl;
-    cout << "Press 3 to TODO" << endl;  // not implemented yet
+    cout << "Press 1 to count." << endl;
+    cout << "Press 2 to roll the dice." << endl;
+    cout << "Press 3 to roll a character." << endl;  // not implemented yet
     cout << "Choice: ";
     // input validation
     int choice;
@@ -62,6 +71,16 @@ int main()
     if (choice == 1) {
         option_one();   // function call
     }
+    if (choice == 2) {
+        option_two(); // the dice roller
+    }
+    if (choice == 3) {
+        option_three();
+    }
+    if (choice == 4) {
+        cout << "Quitting time!" << endl;
+    }
+
     cout << "Thanks for using the menu." << endl;
     return 0;
 }

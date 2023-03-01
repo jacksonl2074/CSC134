@@ -2,6 +2,8 @@
 1677516012 source:c:\dev\github\csc134\m4t2_jackson\main.cpp
 	<iostream>
 
-1677686056 source:c:\users\jacksonl2074\documents\github\csc134\m4t2_jackson\main.cpp
+1677688492 source:c:\users\jacksonl2074\documents\github\csc134\m4t2_jackson\main.cpp
 	<iostream>
+	<ctime>
+	<cstdlib>
 
